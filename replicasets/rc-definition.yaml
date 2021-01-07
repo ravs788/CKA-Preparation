@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-rc1
+  labels:
+    name: myapp
+    type: front-end
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        tier: front-end
+    spec:
+      containers:
+      -  name: nginx-comntainer
+         image: nginx
+
